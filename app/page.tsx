@@ -1,7 +1,12 @@
 import type { Metadata } from "next"
 import Navbar from "@/components/navbar"
 import Hero from "@/components/hero"
+import TrustedBy from "@/components/trusted-by"
 import Features from "@/components/features"
+import Stats from "@/components/stats"
+import Services from "@/components/services"
+import Testimonials from "@/components/testimonials"
+import FAQ from "@/components/faq"
 import CTA from "@/components/cta"
 import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
@@ -37,7 +42,12 @@ export default function Home() {
         </header>
         <main>
           <Hero />
+          <TrustedBy />
           <Features />
+          <Stats />
+          <Services />
+          <Testimonials />
+          <FAQ />
           <CTA />
           <ContactSection />
         </main>
