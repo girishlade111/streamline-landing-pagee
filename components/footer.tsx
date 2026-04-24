@@ -105,7 +105,7 @@ export default function Footer() {
             <p className="text-zinc-500 text-xs mb-4 leading-relaxed">
               Subscribe to our engineering updates and industry insights.
             </p>
-            <div className="flex gap-2">
+<div className="flex gap-2">
               <input 
                 type="email" 
                 placeholder="Email address"
@@ -115,11 +115,10 @@ export default function Footer() {
                 Join
               </button>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="mt-16 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -134,7 +133,7 @@ export default function Footer() {
             <Link href="/terms" className="text-zinc-500 text-xs hover:text-white transition-colors">Terms of Service</Link>
             <Link href="/cookies" className="text-zinc-500 text-xs hover:text-white transition-colors">Cookie Policy</Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   )
