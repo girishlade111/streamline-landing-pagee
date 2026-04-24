@@ -1,55 +1,109 @@
 import Link from "next/link"
 import SocialLinks from "@/components/social-links"
+import { Zap } from "lucide-react"
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear()
+
   return (
-    <footer className="border-t">
-      <div className="container flex flex-col gap-8 py-8 md:flex-row md:py-12">
-        <div className="flex-1 space-y-4">
-          <h2 className="font-bold">Amane Soft</h2>
-          <p className="text-sm text-muted-foreground">Pioneering software solutions for the digital age.</p>
-        </div>
-        <div className="grid flex-1 grid-cols-2 gap-12 sm:grid-cols-3">
-          <div className="space-y-4">
-            <h3 className="text-sm font-medium">Solutions</h3>
-            <ul className="space-y-3 text-sm">
+    <footer className="bg-zinc-950 border-t border-zinc-900 overflow-hidden">
+      <div className="container px-4 py-16 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+          <div className="space-y-6">
+            <Link href="/" className="flex items-center gap-2">
+              <div className="h-8 w-8 rounded-lg bg-white flex items-center justify-center">
+                <Zap className="h-5 w-5 text-black fill-current" />
+              </div>
+              <span className="text-xl font-bold text-white tracking-tight">Amane Soft</span>
+            </Link>
+            <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">
+              Pioneering enterprise software solutions with a focus on AI, cloud resilience, and high-scale engineering.
+            </p>
+            <div className="flex gap-4">
+              <SocialLinks />
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-white font-bold text-sm mb-6 uppercase tracking-wider">Solutions</h3>
+            <ul className="space-y-4 text-sm">
               <li>
-                <Link href="/ai-analytics" className="text-muted-foreground transition-colors hover:text-primary">
-                  AI Analytics
+                <Link href="#features" className="text-zinc-500 transition-colors hover:text-white">
+                  AI-Powered Analytics
                 </Link>
               </li>
               <li>
-                <Link href="/cloud-services" className="text-muted-foreground transition-colors hover:text-primary">
-                  Cloud Services
+                <Link href="#services" className="text-zinc-500 transition-colors hover:text-white">
+                  Cloud Infrastructure
+                </Link>
+              </li>
+              <li>
+                <Link href="#services" className="text-zinc-500 transition-colors hover:text-white">
+                  Cybersecurity
+                </Link>
+              </li>
+              <li>
+                <Link href="#services" className="text-zinc-500 transition-colors hover:text-white">
+                  Data Engineering
                 </Link>
               </li>
             </ul>
           </div>
-          <div className="space-y-4">
-            <h3 className="text-sm font-medium">Company</h3>
-            <ul className="space-y-3 text-sm">
+
+          <div>
+            <h3 className="text-white font-bold text-sm mb-6 uppercase tracking-wider">Company</h3>
+            <ul className="space-y-4 text-sm">
               <li>
-                <Link href="/about" className="text-muted-foreground transition-colors hover:text-primary">
+                <Link href="/about" className="text-zinc-500 transition-colors hover:text-white">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-muted-foreground transition-colors hover:text-primary">
+                <Link href="/careers" className="text-zinc-500 transition-colors hover:text-white">
                   Careers
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-zinc-500 transition-colors hover:text-white">
+                  Engineering Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="#contact" className="text-zinc-500 transition-colors hover:text-white">
+                  Contact
                 </Link>
               </li>
             </ul>
           </div>
-          <div className="space-y-4">
-            <h3 className="text-sm font-medium">Connect</h3>
-            <SocialLinks variant="compact" />
+
+          <div>
+            <h3 className="text-white font-bold text-sm mb-6 uppercase tracking-wider">Newsletter</h3>
+            <p className="text-zinc-500 text-sm mb-6 leading-relaxed">
+              Subscribe to our engineering updates and industry insights.
+            </p>
+            <div className="flex gap-2">
+              <input 
+                type="email" 
+                placeholder="Email address"
+                className="flex-1 px-4 py-2 rounded-lg bg-zinc-900 border border-zinc-800 text-white text-sm focus:outline-none focus:border-zinc-700 transition-colors"
+              />
+              <button className="px-4 py-2 rounded-lg bg-white text-black text-sm font-bold hover:bg-zinc-200 transition-colors">
+                Join
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="container border-t py-6">
-        <p className="text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Amane Soft, Inc. All rights reserved.
-        </p>
+
+        <div className="mt-16 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-zinc-500 text-xs">
+            © {currentYear} Amane Soft, Inc. All rights reserved. Built with precision for the modern enterprise.
+          </p>
+          <div className="flex gap-8">
+            <Link href="/privacy" className="text-zinc-500 text-xs hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="text-zinc-500 text-xs hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/cookies" className="text-zinc-500 text-xs hover:text-white transition-colors">Cookie Policy</Link>
+          </div>
+        </div>
       </div>
     </footer>
   )
