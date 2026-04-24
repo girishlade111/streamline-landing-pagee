@@ -80,16 +80,16 @@ export default function Features() {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="font-bold text-4xl leading-[1.1] sm:text-5xl md:text-6xl bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent tracking-tight font-sans">
+        <h2 className="font-bold text-3xl leading-[1.1] sm:text-4xl md:text-5xl bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent tracking-tight font-sans">
           Cutting-Edge Solutions
         </h2>
-        <p className="mt-4 text-zinc-400 sm:text-lg max-w-[42rem] mx-auto">
+        <p className="mt-4 text-zinc-400 text-sm sm:text-base max-w-[32rem] mx-auto leading-relaxed">
           Our technology stack is built for the future. Explore the innovations that drive Amane Soft's digital transformation initiatives.
         </p>
       </motion.div>
       
       <motion.div 
-        className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+        className="mx-auto grid max-w-6xl grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -99,18 +99,18 @@ export default function Features() {
           <motion.div 
             key={feature.name} 
             variants={itemVariants}
-            className="group relative overflow-hidden rounded-2xl border bg-zinc-950/50 p-8 transition-all hover:border-primary/50 hover:bg-zinc-900/50"
+            className="group relative overflow-hidden rounded-2xl border bg-zinc-950/50 p-6 transition-all hover:border-primary/50 hover:bg-zinc-900/50"
             whileHover={{ y: -5 }}
           >
             {/* Gradient background hover effect */}
             <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 transition-opacity duration-500 group-hover:opacity-100`} />
             
             <div className="relative z-10">
-              <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 border border-zinc-800 transition-all duration-300 group-hover:scale-110 group-hover:border-primary/50 ${feature.iconColor}`}>
-                <feature.icon className="h-6 w-6" />
+              <div className={`flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-900 border border-zinc-800 transition-all duration-300 group-hover:scale-110 group-hover:border-primary/50 ${feature.iconColor}`}>
+                <feature.icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-6 font-bold text-xl text-white tracking-tight">{feature.name}</h3>
-              <p className="mt-3 text-zinc-400 leading-relaxed text-sm font-sans">
+              <h3 className="mt-5 font-bold text-lg text-white tracking-tight">{feature.name}</h3>
+              <p className="mt-2.5 text-zinc-400 leading-relaxed text-[13px] font-sans">
                 {feature.description}
               </p>
             </div>

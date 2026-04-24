@@ -49,51 +49,51 @@ export default function Stats() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 font-sans">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-5 font-sans">
               Proven Excellence in <br />
               <span className="text-zinc-500">Global Scale Engineering</span>
             </h2>
-            <p className="text-zinc-400 text-lg mb-8 max-w-lg">
+            <p className="text-zinc-400 text-sm sm:text-base mb-6 max-w-lg leading-relaxed">
               We don't just build software; we architect resilient digital ecosystems that empower the world's leading enterprises.
             </p>
             
-            <div className="grid grid-cols-2 gap-6">
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="h-5 w-5 text-emerald-500" />
-                <span className="text-zinc-300 font-medium">SOC2 Type II Certified</span>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                <span className="text-zinc-300 font-medium text-xs sm:text-sm">SOC2 Type II Certified</span>
               </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="h-5 w-5 text-emerald-500" />
-                <span className="text-zinc-300 font-medium">ISO 27001 Compliant</span>
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                <span className="text-zinc-300 font-medium text-xs sm:text-sm">ISO 27001 Compliant</span>
               </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="h-5 w-5 text-emerald-500" />
-                <span className="text-zinc-300 font-medium">GDPR Ready</span>
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                <span className="text-zinc-300 font-medium text-xs sm:text-sm">GDPR Ready</span>
               </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="h-5 w-5 text-emerald-500" />
-                <span className="text-zinc-300 font-medium">24/7 Global Support</span>
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                <span className="text-zinc-300 font-medium text-xs sm:text-sm">24/7 Global Support</span>
               </div>
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.name}
-                className="p-8 rounded-3xl bg-zinc-900/50 border border-zinc-800 hover:border-zinc-700 transition-all group"
+                className="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800 hover:border-zinc-700 transition-all group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-zinc-800 border border-zinc-700 group-hover:scale-110 transition-transform ${stat.color}`}>
-                  <stat.icon className="h-6 w-6" />
+                <div className={`mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-800 border border-zinc-700 group-hover:scale-110 transition-transform ${stat.color}`}>
+                  <stat.icon className="h-5 w-5" />
                 </div>
-                <div className="space-y-1">
-                  <h3 className="text-4xl font-bold tracking-tighter text-white">{stat.value}</h3>
-                  <p className="font-semibold text-zinc-300">{stat.name}</p>
-                  <p className="text-sm text-zinc-500">{stat.description}</p>
+                <div className="space-y-0.5">
+                  <h3 className="text-3xl font-bold tracking-tighter text-white">{stat.value}</h3>
+                  <p className="font-semibold text-zinc-300 text-sm">{stat.name}</p>
+                  <p className="text-xs text-zinc-500 leading-tight">{stat.description}</p>
                 </div>
               </motion.div>
             ))}
