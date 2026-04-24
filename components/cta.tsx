@@ -2,40 +2,57 @@
 
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Zap, Star } from "lucide-react"
 
 export default function CTA() {
   return (
-    <section className="border-t relative overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px_32px]" />
-      <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/20 opacity-20 blur-[100px]" />
+    <section className="py-24 md:py-32 bg-zinc-950 relative overflow-hidden">
+      {/* Immersive background effects */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent -z-10" />
       
-      <motion.div 
-        className="container relative z-10 flex flex-col items-center gap-6 py-24 text-center md:py-32"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-      >
-        <h2 className="font-bold text-3xl leading-[1.1] sm:text-4xl md:text-5xl lg:text-6xl max-w-3xl">
-          Ready to revolutionize your business?
-        </h2>
-        <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-          Join leading companies who trust Amane Soft to drive their digital transformation and stay ahead in the
-          rapidly evolving tech landscape.
-        </p>
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="mt-4"
-        >
-          <Button size="lg" className="group rounded-full px-8">
-            Get Started Today
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
-        </motion.div>
-      </motion.div>
+      <div className="container px-4">
+        <div className="relative rounded-[3rem] border border-zinc-800 bg-zinc-900/40 p-12 md:p-20 overflow-hidden text-center backdrop-blur-xl">
+          {/* Decorative Elements */}
+          <div className="absolute top-0 right-0 p-12 opacity-5">
+            <Zap className="h-64 w-64 text-white" />
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative z-10 flex flex-col items-center gap-8"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-300 text-sm font-bold">
+              <Star className="h-4 w-4 text-amber-500 fill-current" />
+              Trusted by 2000+ Enterprise Leaders
+            </div>
+            
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white max-w-4xl mx-auto">
+              Transform your enterprise <br />
+              <span className="text-zinc-500">with Amane Soft today.</span>
+            </h2>
+            
+            <p className="text-zinc-400 text-xl max-w-2xl mx-auto leading-relaxed">
+              Unlock the power of high-scale engineering and AI. Our specialists are ready to architect your next-generation digital ecosystem.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 mt-4">
+              <Button size="lg" className="h-16 px-10 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-lg group shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+                Start Your Transformation
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+              <Button variant="outline" size="lg" className="h-16 px-10 rounded-full border-zinc-700 hover:bg-zinc-800 text-white font-bold text-lg bg-transparent">
+                Talk to an Architect
+              </Button>
+            </div>
+
+            <p className="text-zinc-500 text-sm mt-4">
+              No long-term commitments. Scale your team on-demand.
+            </p>
+          </motion.div>
+        </div>
+      </div>
     </section>
   )
 }
