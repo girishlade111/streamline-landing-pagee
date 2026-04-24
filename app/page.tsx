@@ -3,6 +3,7 @@ import Navbar from "@/components/navbar"
 import Hero from "@/components/hero"
 import Features from "@/components/features"
 import CTA from "@/components/cta"
+import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
 
 export const metadata: Metadata = {
@@ -38,6 +39,7 @@ export default function Home() {
           <Hero />
           <Features />
           <CTA />
+          <ContactSection />
         </main>
         <Footer />
       </div>
