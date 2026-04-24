@@ -70,13 +70,13 @@ export default function Testimonials() {
             </div>
           </motion.div>
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6"
+            className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6 font-syne uppercase"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Trusted by Engineering Teams
+            Trusted by <span className="font-newsreader italic font-light tracking-normal lowercase text-zinc-500">Engineering</span> Teams
           </motion.h2>
           <motion.p 
             className="text-zinc-400 text-lg max-w-2xl"

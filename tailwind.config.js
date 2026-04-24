@@ -11,6 +11,11 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-outfit)", "sans-serif"],
+        syne: ["var(--font-syne)", "sans-serif"],
+        newsreader: ["var(--font-newsreader)", "serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

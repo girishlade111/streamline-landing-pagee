@@ -80,10 +80,10 @@ export default function Features() {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">
-          Cutting-Edge Solutions
+        <h2 className="font-bold text-4xl leading-[1.1] sm:text-5xl md:text-7xl font-syne bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent uppercase tracking-tight">
+          Cutting-Edge <span className="font-newsreader italic font-light lowercase tracking-normal text-zinc-500">Solutions</span>
         </h2>
-        <p className="mt-4 text-muted-foreground sm:text-lg max-w-[42rem] mx-auto">
+        <p className="mt-4 text-zinc-400 sm:text-lg max-w-[32rem] mx-auto font-newsreader italic">
           Our technology stack is built for the future. Explore the innovations that drive Amane Soft's digital transformation initiatives.
         </p>
       </motion.div>
@@ -109,8 +109,8 @@ export default function Features() {
               <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 border border-zinc-800 transition-all duration-300 group-hover:scale-110 group-hover:border-primary/50 ${feature.iconColor}`}>
                 <feature.icon className="h-6 w-6" />
               </div>
-              <h3 className="mt-6 font-bold text-xl text-white">{feature.name}</h3>
-              <p className="mt-3 text-zinc-400 leading-relaxed text-sm">
+              <h3 className="mt-6 font-bold text-xl text-white font-syne uppercase tracking-tight">{feature.name}</h3>
+              <p className="mt-3 text-zinc-400 leading-relaxed text-sm font-sans">
                 {feature.description}
               </p>
             </div>

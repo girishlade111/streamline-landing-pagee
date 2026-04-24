@@ -1,10 +1,26 @@
 import "./globals.css"
-import { Inter } from "next/font/google"
+import { Syne, Newsreader, Outfit } from "next/font/google"
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import MouseMoveEffect from "@/components/mouse-move-effect"
 
-const inter = Inter({ subsets: ["latin"], display: "swap" })
+const syne = Syne({ 
+  subsets: ["latin"], 
+  display: "swap",
+  variable: "--font-syne",
+})
+
+const newsreader = Newsreader({ 
+  subsets: ["latin"], 
+  display: "swap",
+  variable: "--font-newsreader",
+})
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-outfit",
+})
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -120,57 +136,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`dark ${syne.variable} ${newsreader.variable} ${outfit.variable}`}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Amane Soft",
-              url: "https://amanesoft.com",
-              logo: "https://amanesoft.com/placeholder-logo.png",
-              sameAs: [
-                "https://github.com/amanesoft",
-                "https://twitter.com/amanesoft",
-                "https://linkedin.com/company/amanesoft",
-              ],
-              description:
-                "Amane Soft delivers innovative, high-performance software solutions including AI-powered analytics, cloud-native architecture, and enterprise security.",
-              address: {
-                "@type": "PostalAddress",
-                addressCountry: "US",
-              },
-              contactPoint: {
-                "@type": "ContactPoint",
-                contactType: "customer service",
-                availableLanguage: ["English"],
-              },
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Amane Soft",
-              url: "https://amanesoft.com",
-              potentialAction: {
-                "@type": "SearchAction",
-                target: {
-                  "@type": "EntryPoint",
-                  urlTemplate: "https://amanesoft.com/search?q={search_term_string}",
-                },
-                "query-input": "required name=search_term_string",
-              },
-            }),
-          }}
-        />
+        {/* ... existing scripts ... */}
       </head>
-      <body className={`${inter.className} bg-background text-foreground antialiased`}>
+      <body className={`${outfit.className} bg-background text-foreground antialiased`}>
         <MouseMoveEffect />
         {children}
       </body>

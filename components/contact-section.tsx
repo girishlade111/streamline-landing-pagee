@@ -43,9 +43,9 @@ export default function ContactSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">
+                        <h2 className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight text-white mb-8 font-syne uppercase">
                             Let's Architect <br />
-                            <span className="text-zinc-500">Your Digital Future.</span>
+                            <span className="font-newsreader italic font-light tracking-normal lowercase text-zinc-500">Your Digital Future.</span>
                         </h2>
                         <p className="text-zinc-400 text-lg mb-10 max-w-lg">
                             Ready to scale your enterprise with cutting-edge engineering? Our team of specialists is ready to help you navigate the complex tech landscape.

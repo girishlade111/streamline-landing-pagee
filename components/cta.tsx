@@ -28,9 +28,9 @@ export default function CTA() {
               Trusted by 2000+ Enterprise Leaders
             </div>
             
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white max-w-4xl mx-auto">
-              Transform your enterprise <br />
-              <span className="text-zinc-500">with Amane Soft today.</span>
+            <h2 className="text-4xl md:text-6xl lg:text-9xl font-bold tracking-tighter text-white max-w-4xl mx-auto font-syne uppercase">
+              Transform your <span className="font-newsreader italic font-light tracking-normal lowercase text-zinc-500">Enterprise</span> <br />
+              with Amane Soft today.
             </h2>
             
             <p className="text-zinc-400 text-xl max-w-2xl mx-auto leading-relaxed">

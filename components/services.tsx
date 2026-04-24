@@ -52,14 +52,14 @@ export default function Services() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-2xl">
             <motion.h2 
-              className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6"
+              className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight text-white mb-6 font-syne uppercase"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              Enterprise Engineering <br />
-              <span className="text-zinc-500">at any scale.</span>
+              Enterprise <span className="font-newsreader italic font-light tracking-normal lowercase text-zinc-500">Engineering</span> <br />
+              at any scale.
             </motion.h2>
             <motion.p 
               className="text-zinc-400 text-lg leading-relaxed"

@@ -27,14 +27,14 @@ export default function Hero() {
           </motion.div>
 
           <motion.h1 
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white"
+            className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tight text-white font-syne"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Innovate Faster with
+            Innovate <span className="font-newsreader italic font-light tracking-normal text-zinc-500">Faster</span> with
             <br />
-            <span className="bg-gradient-to-r from-white via-white/80 to-white/50 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white via-white/80 to-white/50 bg-clip-text text-transparent uppercase tracking-tighter">
               Amane Soft
             </span>
           </motion.h1>
