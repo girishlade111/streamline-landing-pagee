@@ -52,7 +52,7 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section id="testimonials" className="py-24 md:py-32 bg-zinc-950 overflow-hidden">
-      <div className="container px-4">
+      <div className="container">
         <div className="flex flex-col items-center text-center mb-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -69,7 +69,7 @@ export default function Testimonials() {
               +2k
             </div>
           </motion.div>
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-5 font-sans"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +78,7 @@ export default function Testimonials() {
           >
             Trusted by Engineering Teams
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-zinc-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ export default function Testimonials() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Quote className="absolute top-5 right-6 h-6 w-6 text-zinc-800 group-hover:text-zinc-700 transition-colors" />
-              
+
               <div className="relative z-10">
                 <div className="flex gap-1 mb-5 text-amber-500/80">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -111,7 +111,7 @@ export default function Testimonials() {
                   "{testimonial.content}"
                 </p>
               </div>
-              
+
               <div className="flex items-center gap-3.5 border-t border-zinc-800/50 pt-5">
                 <div className="h-10 w-10 rounded-full bg-zinc-800 overflow-hidden">
                   <Image src={testimonial.image} alt={testimonial.name} width={40} height={40} className="object-cover" />

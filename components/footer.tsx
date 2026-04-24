@@ -25,7 +25,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-zinc-950 border-t border-zinc-900 overflow-hidden">
-      <div className="container px-4 py-16 md:py-24">
+      <div className="container py-16 md:py-24">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8"
           variants={footerVariants}

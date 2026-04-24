@@ -6,27 +6,27 @@ import SocialLinks from "@/components/social-links"
 import { motion } from "framer-motion"
 
 const contactInfo = [
-  {
-    title: "Enterprise Support",
-    description: "24/7 dedicated support for mission-critical systems and global infrastructure.",
-    icon: Headphones,
-    contact: "support@amanesoft.com",
-    label: "Email Support"
-  },
-  {
-    title: "Sales Inquiry",
-    description: "Discuss your digital transformation goals with our expert solution architects.",
-    icon: Globe,
-    contact: "sales@amanesoft.com",
-    label: "Contact Sales"
-  },
-  {
-    title: "Security & Compliance",
-    description: "Inquiries regarding SOC2, GDPR, HIPAA, or specialized security audits.",
-    icon: ShieldCheck,
-    contact: "security@amanesoft.com",
-    label: "Security Desk"
-  }
+    {
+        title: "Enterprise Support",
+        description: "24/7 dedicated support for mission-critical systems and global infrastructure.",
+        icon: Headphones,
+        contact: "support@amanesoft.com",
+        label: "Email Support"
+    },
+    {
+        title: "Sales Inquiry",
+        description: "Discuss your digital transformation goals with our expert solution architects.",
+        icon: Globe,
+        contact: "sales@amanesoft.com",
+        label: "Contact Sales"
+    },
+    {
+        title: "Security & Compliance",
+        description: "Inquiries regarding SOC2, GDPR, HIPAA, or specialized security audits.",
+        icon: ShieldCheck,
+        contact: "security@amanesoft.com",
+        label: "Security Desk"
+    }
 ]
 
 export default function ContactSection() {
@@ -34,8 +34,8 @@ export default function ContactSection() {
         <section id="contact" className="py-24 md:py-32 bg-zinc-950 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-500/5 blur-[120px] rounded-full -z-10" />
-            
-            <div className="container px-4">
+
+            <div className="container">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}

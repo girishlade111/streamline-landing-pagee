@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="absolute bottom-[20%] left-[20%] w-[60%] h-[1px] bg-cyan-500/10 blur-[60px] rotate-[15deg]" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 text-center">
+      <div className="container relative z-10 mx-auto text-center">
         <div className="max-w-4xl mx-auto space-y-8">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -26,7 +26,7 @@ export default function Hero() {
             <span>New: AI-Powered Analytics 2.0</span>
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white font-sans"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -39,17 +39,17 @@ export default function Hero() {
             </span>
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             className="mx-auto max-w-xl text-base md:text-lg text-zinc-400 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Empowering businesses with cutting-edge software solutions. From AI-driven analytics 
+            Empowering businesses with cutting-edge software solutions. From AI-driven analytics
             to seamless cloud integrations, we're shaping the future of technology.
           </motion.p>
 
-          <motion.div 
+          <motion.div
             className="flex flex-wrap justify-center gap-3"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ export default function Hero() {
         </div>
 
         {/* Product Mockup Representation / Bento Grid Section */}
-        <motion.div 
+        <motion.div
           className="mt-20 relative max-w-6xl mx-auto"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ export default function Hero() {
         >
           <div className="relative rounded-2xl border border-zinc-800 bg-zinc-900/50 p-4 shadow-2xl overflow-hidden backdrop-blur-sm">
             <div className="absolute inset-0 bg-gradient-to-t from-purple-500/5 to-transparent pointer-events-none" />
-            
+
             {/* Mockup Content */}
             <div className="aspect-[16/10] w-full rounded-xl bg-zinc-950 border border-zinc-800 flex flex-col overflow-hidden text-left">
               {/* Toolbar */}
@@ -190,7 +190,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          
+
           {/* Decorative Glow */}
           <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-purple-500/10 blur-[120px] rounded-full" />
         </motion.div>

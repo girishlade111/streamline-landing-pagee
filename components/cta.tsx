@@ -9,8 +9,8 @@ export default function CTA() {
     <section className="py-24 md:py-32 bg-zinc-950 relative overflow-hidden">
       {/* Immersive background effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent -z-10" />
-      
-      <div className="container px-4">
+
+      <div className="container">
         <div className="relative rounded-[3rem] border border-zinc-800 bg-zinc-900/40 p-12 md:p-20 overflow-hidden text-center backdrop-blur-xl">
           {/* Decorative Elements */}
           <div className="absolute top-0 right-0 p-12 opacity-5">
@@ -27,12 +27,12 @@ export default function CTA() {
               <Star className="h-3 w-3 text-amber-500 fill-current" />
               Trusted by 2000+ Enterprise Leaders
             </div>
-            
+
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white max-w-4xl mx-auto font-sans leading-tight">
               Transform your enterprise <br />
               <span className="text-zinc-500">with Amane Soft today.</span>
             </h2>
-            
+
             <p className="text-zinc-400 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
               Unlock the power of high-scale engineering and AI. Our specialists are ready to architect your next-generation digital ecosystem.
             </p>

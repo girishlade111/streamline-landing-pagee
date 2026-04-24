@@ -40,8 +40,8 @@ export default function Stats() {
       {/* Background gradients */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/10 blur-[120px] rounded-full -z-10" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/10 blur-[120px] rounded-full -z-10" />
-      
-      <div className="container px-4">
+
+      <div className="container">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -56,7 +56,7 @@ export default function Stats() {
             <p className="text-zinc-400 text-sm sm:text-base mb-6 max-w-lg leading-relaxed">
               We don't just build software; we architect resilient digital ecosystems that empower the world's leading enterprises.
             </p>
-            
+
             <div className="grid grid-cols-2 gap-4">
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="h-4 w-4 text-emerald-500" />

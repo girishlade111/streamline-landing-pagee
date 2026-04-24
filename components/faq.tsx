@@ -40,7 +40,7 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="py-24 md:py-32 bg-zinc-950">
-      <div className="container max-w-4xl px-4">
+      <div className="container max-w-4xl">
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -51,7 +51,7 @@ export default function FAQ() {
             <MessageCircleQuestion className="h-3 w-3" />
             <span>Support Center</span>
           </motion.div>
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-5 font-sans"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ export default function FAQ() {
           >
             Common Inquiries
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-zinc-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -73,13 +73,12 @@ export default function FAQ() {
 
         <div className="grid gap-3">
           {faqs.map((faq, index) => (
-            <motion.div 
+            <motion.div
               key={index}
-              className={`rounded-2xl border transition-all duration-300 ${
-                openIndex === index 
-                  ? "bg-zinc-900/50 border-zinc-700 shadow-xl" 
+              className={`rounded-2xl border transition-all duration-300 ${openIndex === index
+                  ? "bg-zinc-900/50 border-zinc-700 shadow-xl"
                   : "bg-zinc-900/20 border-zinc-800 hover:border-zinc-700"
-              }`}
+                }`}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -89,20 +88,18 @@ export default function FAQ() {
                 className="flex w-full items-center justify-between p-5 lg:p-6 text-left outline-none"
                 onClick={() => toggleFAQ(index)}
               >
-                <span className={`text-base font-bold transition-colors ${
-                  openIndex === index ? "text-white" : "text-zinc-300"
-                }`}>
+                <span className={`text-base font-bold transition-colors ${openIndex === index ? "text-white" : "text-zinc-300"
+                  }`}>
                   {faq.question}
                 </span>
-                <div className={`flex h-7 w-7 items-center justify-center rounded-full border transition-all duration-300 ${
-                  openIndex === index 
-                    ? "bg-white border-white text-black rotate-180" 
+                <div className={`flex h-7 w-7 items-center justify-center rounded-full border transition-all duration-300 ${openIndex === index
+                    ? "bg-white border-white text-black rotate-180"
                     : "bg-zinc-800 border-zinc-700 text-zinc-400"
-                }`}>
+                  }`}>
                   <ChevronDown className="h-3.5 w-3.5" />
                 </div>
               </button>
-              
+
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div

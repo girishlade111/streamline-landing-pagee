@@ -48,10 +48,10 @@ export default function Services() {
       {/* Background Decorative Element */}
       <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
-      <div className="container relative z-10 px-4">
+      <div className="container relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="max-w-2xl">
-            <motion.h2 
+            <motion.h2
               className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-5 font-sans"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ export default function Services() {
               Enterprise Engineering <br />
               <span className="text-zinc-500">at any scale.</span>
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="text-zinc-400 text-sm sm:text-base leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -103,7 +103,7 @@ export default function Services() {
                   {service.description}
                 </p>
               </div>
-              
+
               <ul className="space-y-2 mt-auto pt-5 border-t border-zinc-800/50">
                 {service.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-2 text-[11px] font-medium text-zinc-500 group-hover:text-zinc-300 transition-colors">
