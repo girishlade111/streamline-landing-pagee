@@ -24,18 +24,28 @@ export default function Navbar() {
   const navItems = [
     { 
       label: "Solutions", 
-      href: "#services",
+      href: "/solutions",
       hasDropdown: true,
-      items: ["AI Analytics", "Cloud Mesh", "Cyber Security", "Data Infra"]
+      items: [
+        { label: "AI Analytics", href: "/solutions#ai-analytics" },
+        { label: "Cloud Mesh", href: "/solutions#cloud-mesh" },
+        { label: "Cyber Security", href: "/solutions#cyber-security" },
+        { label: "Data Infra", href: "/solutions#data-infra" },
+      ]
     },
     { 
       label: "Resources", 
-      href: "#features",
+      href: "/resources",
       hasDropdown: true,
-      items: ["Documentation", "API Reference", "Case Studies", "Blog"]
+      items: [
+        { label: "Documentation", href: "/resources#documentation" },
+        { label: "API Reference", href: "/resources#api-reference" },
+        { label: "Case Studies", href: "/resources#case-studies" },
+        { label: "Blog", href: "/resources#blog" },
+      ]
     },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Company", href: "#testimonials" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Company", href: "/company" },
   ]
 
   return (
@@ -79,11 +89,11 @@ export default function Navbar() {
                   >
                     {item.items?.map((subItem) => (
                       <Link
-                        key={subItem}
-                        href="#"
+                        key={subItem.label}
+                        href={subItem.href}
                         className="block px-3 py-1.5 rounded-lg text-[11px] font-medium text-zinc-400 hover:text-white hover:bg-white/5 transition-all"
                       >
-                        {subItem}
+                        {subItem.label}
                       </Link>
                     ))}
                   </motion.div>
