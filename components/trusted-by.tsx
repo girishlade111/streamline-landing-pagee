@@ -1,49 +1,50 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { ShieldCheck, Cpu, Zap, Globe, Layers, Database } from "lucide-react"
 
-const companies = [
-  { name: "Acme Corp", logo: "AC" },
-  { name: "GlobalTech", logo: "GT" },
-  { name: "Quantum", logo: "Q" },
-  { name: "Nexus", logo: "NX" },
-  { name: "Pinnacle", logo: "P" },
-  { name: "Horizon", logo: "H" },
+const partners = [
+  { name: "Acme Corp", icon: ShieldCheck },
+  { name: "GlobalTech", icon: Cpu },
+  { name: "Quantum", icon: Zap },
+  { name: "Nexus", icon: Globe },
+  { name: "Pinnacle", icon: Layers },
+  { name: "Horizon", icon: Database },
 ]
 
 export default function TrustedBy() {
   return (
-    <section className="border-t border-border/50 bg-muted/10 py-12 md:py-16">
-      <div className="container overflow-hidden">
-        <p className="mb-8 text-center text-sm font-medium text-muted-foreground">
-          TRUSTED BY INNOVATIVE TEAMS WORLDWIDE
+    <section className="py-16 bg-zinc-950 border-y border-zinc-900 overflow-hidden relative">
+      <div className="container px-4">
+        <p className="mb-12 text-center text-[10px] font-bold text-zinc-500 uppercase tracking-[0.2em]">
+          Empowering the world's most innovative engineering teams
         </p>
         
-        <div className="relative flex w-full">
-          {/* Gradient fade on edges */}
-          <div className="absolute left-0 top-0 z-10 w-20 h-full bg-gradient-to-r from-background to-transparent pointer-events-none" />
-          <div className="absolute right-0 top-0 z-10 w-20 h-full bg-gradient-to-l from-background to-transparent pointer-events-none" />
+        <div className="relative flex items-center">
+          {/* Mask for smooth fading edges */}
+          <div className="absolute left-0 top-0 z-10 w-32 h-full bg-gradient-to-r from-zinc-950 to-transparent pointer-events-none" />
+          <div className="absolute right-0 top-0 z-10 w-32 h-full bg-gradient-to-l from-zinc-950 to-transparent pointer-events-none" />
           
           <motion.div 
-            className="flex min-w-full items-center justify-around gap-12 sm:gap-24 px-12"
+            className="flex min-w-full items-center gap-16 md:gap-32"
             animate={{ x: ["0%", "-50%"] }}
             transition={{
-              duration: 20,
+              duration: 30,
               ease: "linear",
               repeat: Infinity,
             }}
           >
-            {/* Double the list for seamless loop */}
-            {[...companies, ...companies].map((company, index) => (
+            {/* Repeating for seamless loop */}
+            {[...partners, ...partners, ...partners].map((partner, index) => (
               <div 
-                key={`${company.name}-${index}`} 
-                className="flex items-center gap-2 grayscale transition-all hover:grayscale-0 opacity-50 hover:opacity-100"
+                key={`${partner.name}-${index}`} 
+                className="flex items-center gap-3 grayscale opacity-30 hover:opacity-100 hover:grayscale-0 transition-all duration-500 cursor-default"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary font-bold">
-                  {company.logo}
+                <div className="p-2 rounded-lg bg-zinc-900 border border-zinc-800">
+                    <partner.icon className="h-5 w-5 text-white" />
                 </div>
-                <span className="text-xl font-bold text-foreground/80 tracking-tighter">
-                  {company.name}
+                <span className="text-lg font-bold text-white tracking-tight whitespace-nowrap">
+                  {partner.name}
                 </span>
               </div>
             ))}
