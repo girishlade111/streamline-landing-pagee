@@ -1,0 +1,17 @@
+# robots.txt for Amane Soft
+# https://www.robotstxt.org/robotstxt.html
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin or private paths (when they exist)
+# Disallow: /admin/
+# Disallow: /api/
+# Disallow: /_next/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://amanesoft.com/sitemap.xml
