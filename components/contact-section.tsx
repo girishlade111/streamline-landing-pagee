@@ -1,142 +1,124 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, MapPin, Clock, Zap } from "lucide-react"
+import { ArrowRight, MapPin, Mail, Phone, Globe, ShieldCheck, Headphones } from "lucide-react"
 import SocialLinks from "@/components/social-links"
 import { motion } from "framer-motion"
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
+const contactInfo = [
+  {
+    title: "Enterprise Support",
+    description: "24/7 dedicated support for mission-critical systems and global infrastructure.",
+    icon: Headphones,
+    contact: "support@amanesoft.com",
+    label: "Email Support"
   },
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
+  {
+    title: "Sales Inquiry",
+    description: "Discuss your digital transformation goals with our expert solution architects.",
+    icon: Globe,
+    contact: "sales@amanesoft.com",
+    label: "Contact Sales"
   },
-}
+  {
+    title: "Security & Compliance",
+    description: "Inquiries regarding SOC2, GDPR, HIPAA, or specialized security audits.",
+    icon: ShieldCheck,
+    contact: "security@amanesoft.com",
+    label: "Security Desk"
+  }
+]
 
 export default function ContactSection() {
     return (
-        <section className="container space-y-16 py-24 md:py-32">
-            {/* Section Header */}
-            <motion.div 
-                className="mx-auto max-w-[58rem] text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5 }}
-            >
-                <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">
-                    Let's Build Something Amazing
-                </h2>
-                <p className="mt-4 text-muted-foreground sm:text-lg">
-                    Have a project in mind or want to collaborate? Reach out through any channel below.
-                </p>
-            </motion.div>
-
-            {/* Contact Cards */}
-            <motion.div 
-                className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-3"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-            >
-                {/* Quick Response */}
-                <motion.div variants={itemVariants} className="group relative overflow-hidden rounded-2xl border bg-background/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                        <Zap className="h-6 w-6 text-primary group-hover:text-primary-foreground" strokeWidth={1.5} />
-                    </div>
-                    <h3 className="font-semibold text-lg">Quick Response</h3>
-                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                        I typically respond to all inquiries within 24 hours during business days.
-                    </p>
-                </motion.div>
-
-                {/* Global Reach */}
-                <motion.div variants={itemVariants} className="group relative overflow-hidden rounded-2xl border bg-background/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                        <MapPin className="h-6 w-6 text-primary group-hover:text-primary-foreground" strokeWidth={1.5} />
-                    </div>
-                    <h3 className="font-semibold text-lg">Global Reach</h3>
-                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                        Available for remote collaboration and consulting worldwide.
-                    </p>
-                </motion.div>
-
-                {/* Flexible Hours */}
-                <motion.div variants={itemVariants} className="group relative overflow-hidden rounded-2xl border bg-background/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                        <Clock className="h-6 w-6 text-primary group-hover:text-primary-foreground" strokeWidth={1.5} />
-                    </div>
-                    <h3 className="font-semibold text-lg">Flexible Hours</h3>
-                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                        Willing to accommodate different time zones for meetings and calls.
-                    </p>
-                </motion.div>
-            </motion.div>
-
-            {/* Social & Contact Hub */}
-            <motion.div 
-                className="mx-auto max-w-2xl"
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-            >
-                <div className="relative overflow-hidden rounded-3xl border bg-gradient-to-br from-background via-background to-muted/30 p-8 md:p-12 shadow-sm">
-                    {/* Decorative gradient blobs */}
-                    <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/10 blur-[80px]" />
-                    <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-purple-500/10 blur-[80px]" />
-
-                    <div className="relative z-10 flex flex-col items-center text-center">
-                        <h3 className="font-bold text-2xl md:text-3xl">Connect With Me</h3>
-                        <p className="mt-3 max-w-md text-muted-foreground">
-                            Follow my work, explore my projects, or send a direct message. I'm always open to interesting conversations.
+        <section id="contact" className="py-24 md:py-32 bg-zinc-950 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-500/5 blur-[120px] rounded-full -z-10" />
+            
+            <div className="container px-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">
+                            Let's Architect <br />
+                            <span className="text-zinc-500">Your Digital Future.</span>
+                        </h2>
+                        <p className="text-zinc-400 text-lg mb-10 max-w-lg">
+                            Ready to scale your enterprise with cutting-edge engineering? Our team of specialists is ready to help you navigate the complex tech landscape.
                         </p>
 
-                        {/* Social Icons */}
-                        <div className="mt-8">
+                        <div className="space-y-8 mb-12">
+                            <div className="flex items-start gap-4">
+                                <div className="h-10 w-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400">
+                                    <MapPin className="h-5 w-5" />
+                                </div>
+                                <div>
+                                    <div className="text-white font-bold">Global Headquarters</div>
+                                    <div className="text-zinc-500 text-sm">Tech District, San Francisco, CA 94105</div>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-4">
+                                <div className="h-10 w-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400">
+                                    <Phone className="h-5 w-5" />
+                                </div>
+                                <div>
+                                    <div className="text-white font-bold">Priority Support</div>
+                                    <div className="text-zinc-500 text-sm">+1 (555) 000-0000</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-6">
+                            <h3 className="text-white font-bold uppercase tracking-widest text-xs">Follow Our Innovation</h3>
                             <SocialLinks />
                         </div>
+                    </motion.div>
 
-                        {/* Direct Email CTA */}
-                        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row">
-                            <a
-                                href="mailto:admin@ladestack.in"
-                                className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                    <div className="grid gap-6">
+                        {contactInfo.map((item, index) => (
+                            <motion.div
+                                key={item.title}
+                                className="group p-8 rounded-3xl bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 transition-all hover:bg-zinc-900/60"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
                             >
-                                <span className="h-px w-8 bg-border" />
-                                admin@ladestack.in
-                                <span className="h-px w-8 bg-border" />
-                            </a>
-                        </div>
+                                <div className="flex items-start gap-6">
+                                    <div className="h-14 w-14 rounded-2xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-zinc-500 transition-all">
+                                        <item.icon className="h-7 w-7" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                                        <p className="text-zinc-500 text-sm mb-6 leading-relaxed">
+                                            {item.description}
+                                        </p>
+                                        <a href={`mailto:${item.contact}`} className="inline-flex items-center gap-2 text-white font-bold text-sm group/link">
+                                            {item.label}
+                                            <ArrowRight className="h-4 w-4 transition-transform group-hover/link:translate-x-1" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
 
-                        {/* Website CTA */}
-                        <div className="mt-8">
-                            <a
-                                href="https://ladestack.in"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <Button size="lg" className="group gap-2 rounded-full px-8">
-                                    Visit ladestack.in
-                                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                </Button>
-                            </a>
-                        </div>
+                        <motion.div
+                            className="mt-6 p-1 rounded-3xl bg-gradient-to-r from-purple-500 to-blue-500"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                        >
+                            <Button className="w-full h-16 rounded-[22px] bg-zinc-950 hover:bg-zinc-900 text-white text-lg font-bold border-none transition-colors">
+                                Schedule a Strategy Call
+                            </Button>
+                        </motion.div>
                     </div>
                 </div>
-            </motion.div>
+            </div>
         </section>
     )
 }
