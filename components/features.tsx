@@ -109,7 +109,7 @@ export default function Features() {
               <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 border border-zinc-800 transition-all duration-300 group-hover:scale-110 group-hover:border-primary/50 ${feature.iconColor}`}>
                 <feature.icon className="h-6 w-6" />
               </div>
-              <h3 className="mt-6 font-bold text-xl text-white font-syne uppercase tracking-tight">{feature.name}</h3>
+              <h3 className="mt-6 font-bold text-xl text-white tracking-tight">{feature.name}</h3>
               <p className="mt-3 text-zinc-400 leading-relaxed text-sm font-sans">
                 {feature.description}
               </p>
