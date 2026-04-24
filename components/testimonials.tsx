@@ -70,7 +70,7 @@ export default function Testimonials() {
             </div>
           </motion.div>
           <motion.h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 font-sans"
+            className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-5 font-sans"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -79,7 +79,7 @@ export default function Testimonials() {
             Trusted by Engineering Teams
           </motion.h2>
           <motion.p 
-            className="text-zinc-400 text-lg max-w-2xl"
+            className="text-zinc-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -89,36 +89,36 @@ export default function Testimonials() {
           </motion.p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
-              className="relative flex flex-col justify-between rounded-3xl bg-zinc-900/40 border border-zinc-800 p-8 hover:border-zinc-700 transition-all group"
+              className="relative flex flex-col justify-between rounded-2xl bg-zinc-900/40 border border-zinc-800 p-6 hover:border-zinc-700 transition-all group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Quote className="absolute top-6 right-8 h-8 w-8 text-zinc-800 group-hover:text-zinc-700 transition-colors" />
+              <Quote className="absolute top-5 right-6 h-6 w-6 text-zinc-800 group-hover:text-zinc-700 transition-colors" />
               
               <div className="relative z-10">
-                <div className="flex gap-1 mb-6 text-amber-500/80">
+                <div className="flex gap-1 mb-5 text-amber-500/80">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current" />
+                    <Star key={i} className="h-3.5 w-3.5 fill-current" />
                   ))}
                 </div>
-                <p className="text-zinc-300 leading-relaxed mb-8 text-lg">
+                <p className="text-zinc-300 leading-relaxed mb-6 text-base">
                   "{testimonial.content}"
                 </p>
               </div>
               
-              <div className="flex items-center gap-4 border-t border-zinc-800/50 pt-6">
-                <div className="h-12 w-12 rounded-full bg-zinc-800 overflow-hidden">
-                  <Image src={testimonial.image} alt={testimonial.name} width={48} height={48} className="object-cover" />
+              <div className="flex items-center gap-3.5 border-t border-zinc-800/50 pt-5">
+                <div className="h-10 w-10 rounded-full bg-zinc-800 overflow-hidden">
+                  <Image src={testimonial.image} alt={testimonial.name} width={40} height={40} className="object-cover" />
                 </div>
                 <div>
-                  <div className="font-bold text-white">{testimonial.name}</div>
-                  <div className="text-xs text-zinc-500 font-medium uppercase tracking-wider">{testimonial.role}</div>
+                  <div className="font-bold text-white text-sm">{testimonial.name}</div>
+                  <div className="text-[10px] text-zinc-500 font-medium uppercase tracking-wider">{testimonial.role}</div>
                 </div>
               </div>
             </motion.div>
