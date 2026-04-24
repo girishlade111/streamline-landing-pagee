@@ -64,13 +64,23 @@ export default function SocialLinks({ variant = "default", className = "" }: Soc
     const isCompact = variant === "compact"
 
     return (
-        <div
+        <motion.div 
             className={`flex items-center ${isCompact ? "gap-3" : "gap-4"} ${className}`}
             role="list"
             aria-label="Social media and contact links"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ staggerChildren: 0.05 }}
         >
-            {socialProfiles.map((profile) => (
-                <Link
+            {socialProfiles.map((profile, index) => (
+                <motion.div
+                    key={profile.name}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    whileHover={{ y: -3, scale: 1.05 }}
+                >
+                    <Link
                     key={profile.name}
                     href={profile.href}
                     target="_blank"
@@ -99,7 +109,8 @@ export default function SocialLinks({ variant = "default", className = "" }: Soc
                     />
                     <span className="sr-only">{profile.label}</span>
                 </Link>
+                </motion.div>
             ))}
-        </div>
+        </motion.div>
     )
 }
