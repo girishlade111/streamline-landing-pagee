@@ -80,10 +80,10 @@ export default function Features() {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="font-bold text-4xl leading-[1.1] sm:text-5xl md:text-7xl font-syne bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent uppercase tracking-tight">
-          Cutting-Edge <span className="font-newsreader italic font-light lowercase tracking-normal text-zinc-500">Solutions</span>
+        <h2 className="font-bold text-4xl leading-[1.1] sm:text-5xl md:text-6xl bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent tracking-tight font-sans">
+          Cutting-Edge Solutions
         </h2>
-        <p className="mt-4 text-zinc-400 sm:text-lg max-w-[32rem] mx-auto font-newsreader italic">
+        <p className="mt-4 text-zinc-400 sm:text-lg max-w-[42rem] mx-auto">
           Our technology stack is built for the future. Explore the innovations that drive Amane Soft's digital transformation initiatives.
         </p>
       </motion.div>
