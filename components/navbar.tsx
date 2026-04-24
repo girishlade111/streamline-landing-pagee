@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Github, Zap, Menu, X, ChevronDown, Search, Command } from "lucide-react"
+import { Github, Zap, Menu, X, ChevronDown } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
@@ -141,15 +141,6 @@ export default function Navbar() {
 
         {/* Action Section */}
         <div className="flex items-center gap-2 relative z-50 shrink-0">
-          {/* Search Shortcut */}
-          <button className="hidden md:flex items-center gap-2 px-3 h-8 rounded-full bg-zinc-900 border border-white/5 text-zinc-500 hover:text-zinc-300 transition-all">
-            <Search className="h-3 w-3" />
-            <div className="flex items-center gap-0.5 px-1 py-0.5 rounded bg-zinc-800 text-[8px] border border-white/5">
-              <Command className="h-2 w-2" />
-              <span>K</span>
-            </div>
-          </button>
-
           <Link href="https://github.com/amanesoft" target="_blank" rel="noreferrer" className="hidden sm:block">
             <div className="p-1.5 rounded-full text-zinc-400 hover:text-white transition-all">
               <Github className="h-4 w-4" />
