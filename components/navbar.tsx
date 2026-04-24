@@ -30,23 +30,23 @@ export default function Navbar() {
   return (
     <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${
       isScrolled 
-        ? "bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-800/50 py-3" 
-        : "bg-transparent py-5"
+        ? "bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-800/50 py-2.5" 
+        : "bg-transparent py-4"
     }`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group relative z-50">
-          <div className="h-9 w-9 rounded-xl bg-white flex items-center justify-center transition-transform group-hover:rotate-6 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-            <Zap className="h-5 w-5 text-black fill-current" />
+          <div className="h-8 w-8 rounded-lg bg-white flex items-center justify-center transition-transform group-hover:rotate-6 shadow-[0_0_15px_rgba(255,255,255,0.25)]">
+            <Zap className="h-4.5 w-4.5 text-black fill-current" />
           </div>
-          <span className="text-xl font-bold text-white tracking-tighter">Amane Soft</span>
+          <span className="text-lg font-bold text-white tracking-tighter">Amane Soft</span>
         </Link>
         
-        <nav className="hidden lg:flex items-center gap-1 p-1 rounded-full bg-zinc-900/50 border border-zinc-800/50 backdrop-blur-md">
+        <nav className="hidden lg:flex items-center gap-1 p-0.5 rounded-full bg-zinc-900/50 border border-zinc-800/50 backdrop-blur-md">
           {links.map((link) => (
             <Link 
               key={link.href} 
               href={link.href} 
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-4 py-1.5 rounded-full text-[13px] font-semibold transition-all duration-300 ${
                 pathname === link.href 
                   ? "bg-white text-black" 
                   : "text-zinc-400 hover:text-white hover:bg-zinc-800/50"
@@ -57,20 +57,20 @@ export default function Navbar() {
           ))}
         </nav>
         
-        <div className="flex items-center gap-4 relative z-50">
+        <div className="flex items-center gap-3.5 relative z-50">
           <Link href="https://github.com/amanesoft" target="_blank" rel="noreferrer" className="hidden sm:block">
-            <div className="p-2 rounded-full border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-all">
-              <Github className="h-5 w-5" />
+            <div className="p-1.5 rounded-full border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-all">
+              <Github className="h-4.5 w-4.5" />
             </div>
           </Link>
-          <Button className="hidden sm:flex bg-white hover:bg-zinc-200 text-black font-bold rounded-full px-6 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]">
+          <Button className="hidden sm:flex bg-white hover:bg-zinc-200 text-black font-bold rounded-full px-5 h-9 text-[13px] transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]">
             Get Started
           </Button>
           <button 
-            className="lg:hidden p-2 text-white"
+            className="lg:hidden p-1.5 text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMobileMenuOpen ? <X className="h-5.5 w-5.5" /> : <Menu className="h-5.5 w-5.5" />}
           </button>
         </div>
       </div>

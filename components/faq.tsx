@@ -41,18 +41,18 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-24 md:py-32 bg-zinc-950">
       <div className="container max-w-4xl px-4">
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 text-xs font-mono mb-6"
+            className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 text-[10px] font-mono mb-5"
           >
             <MessageCircleQuestion className="h-3 w-3" />
             <span>Support Center</span>
           </motion.div>
           <motion.h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 font-sans"
+            className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-5 font-sans"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -61,7 +61,7 @@ export default function FAQ() {
             Common Inquiries
           </motion.h2>
           <motion.p 
-            className="text-zinc-400 text-lg max-w-2xl mx-auto"
+            className="text-zinc-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -71,11 +71,11 @@ export default function FAQ() {
           </motion.p>
         </div>
 
-        <div className="grid gap-4">
+        <div className="grid gap-3">
           {faqs.map((faq, index) => (
             <motion.div 
               key={index}
-              className={`rounded-3xl border transition-all duration-300 ${
+              className={`rounded-2xl border transition-all duration-300 ${
                 openIndex === index 
                   ? "bg-zinc-900/50 border-zinc-700 shadow-xl" 
                   : "bg-zinc-900/20 border-zinc-800 hover:border-zinc-700"
@@ -86,20 +86,20 @@ export default function FAQ() {
               transition={{ duration: 0.4, delay: index * 0.05 }}
             >
               <button
-                className="flex w-full items-center justify-between p-6 lg:p-8 text-left outline-none"
+                className="flex w-full items-center justify-between p-5 lg:p-6 text-left outline-none"
                 onClick={() => toggleFAQ(index)}
               >
-                <span className={`text-lg font-bold transition-colors ${
+                <span className={`text-base font-bold transition-colors ${
                   openIndex === index ? "text-white" : "text-zinc-300"
                 }`}>
                   {faq.question}
                 </span>
-                <div className={`flex h-8 w-8 items-center justify-center rounded-full border transition-all duration-300 ${
+                <div className={`flex h-7 w-7 items-center justify-center rounded-full border transition-all duration-300 ${
                   openIndex === index 
                     ? "bg-white border-white text-black rotate-180" 
                     : "bg-zinc-800 border-zinc-700 text-zinc-400"
                 }`}>
-                  <ChevronDown className="h-4 w-4" />
+                  <ChevronDown className="h-3.5 w-3.5" />
                 </div>
               </button>
               
@@ -111,7 +111,7 @@ export default function FAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
-                    <div className="px-6 lg:px-8 pb-8 text-zinc-400 leading-relaxed max-w-3xl">
+                    <div className="px-5 lg:px-6 pb-6 text-zinc-400 text-sm leading-relaxed max-w-3xl">
                       {faq.answer}
                     </div>
                   </motion.div>

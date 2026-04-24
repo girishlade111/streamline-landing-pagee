@@ -23,31 +23,31 @@ export default function CTA() {
             viewport={{ once: true }}
             className="relative z-10 flex flex-col items-center gap-8"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-300 text-sm font-bold">
-              <Star className="h-4 w-4 text-amber-500 fill-current" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-300 text-[10px] font-bold">
+              <Star className="h-3 w-3 text-amber-500 fill-current" />
               Trusted by 2000+ Enterprise Leaders
             </div>
             
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white max-w-4xl mx-auto font-sans">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white max-w-4xl mx-auto font-sans leading-tight">
               Transform your enterprise <br />
               <span className="text-zinc-500">with Amane Soft today.</span>
             </h2>
             
-            <p className="text-zinc-400 text-xl max-w-2xl mx-auto leading-relaxed">
+            <p className="text-zinc-400 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
               Unlock the power of high-scale engineering and AI. Our specialists are ready to architect your next-generation digital ecosystem.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mt-4">
-              <Button size="lg" className="h-16 px-10 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-lg group shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+            <div className="flex flex-col sm:flex-row gap-3.5 mt-2">
+              <Button size="default" className="h-12 px-8 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-base group shadow-[0_0_20px_rgba(255,255,255,0.15)]">
                 Start Your Transformation
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="outline" size="lg" className="h-16 px-10 rounded-full border-zinc-700 hover:bg-zinc-800 text-white font-bold text-lg bg-transparent">
+              <Button variant="outline" size="default" className="h-12 px-8 rounded-full border-zinc-700 hover:bg-zinc-800 text-white font-bold text-base bg-transparent">
                 Talk to an Architect
               </Button>
             </div>
 
-            <p className="text-zinc-500 text-sm mt-4">
+            <p className="text-zinc-500 text-[11px] mt-2 font-medium">
               No long-term commitments. Scale your team on-demand.
             </p>
           </motion.div>

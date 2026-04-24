@@ -9,24 +9,24 @@ export default function Footer() {
     <footer className="bg-zinc-950 border-t border-zinc-900 overflow-hidden">
       <div className="container px-4 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-          <div className="space-y-6">
+          <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-lg bg-white flex items-center justify-center">
-                <Zap className="h-5 w-5 text-black fill-current" />
+              <div className="h-7 w-7 rounded-lg bg-white flex items-center justify-center">
+                <Zap className="h-4 w-4 text-black fill-current" />
               </div>
-              <span className="text-xl font-bold text-white tracking-tight">Amane Soft</span>
+              <span className="text-lg font-bold text-white tracking-tight">Amane Soft</span>
             </Link>
-            <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">
+            <p className="text-zinc-500 text-xs leading-relaxed max-w-[200px]">
               Pioneering enterprise software solutions with a focus on AI, cloud resilience, and high-scale engineering.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               <SocialLinks />
             </div>
           </div>
 
           <div>
-            <h3 className="text-white font-bold text-sm mb-6 uppercase tracking-wider">Solutions</h3>
-            <ul className="space-y-4 text-sm">
+            <h3 className="text-white font-bold text-[10px] mb-4 uppercase tracking-widest">Solutions</h3>
+            <ul className="space-y-2.5 text-[13px]">
               <li>
                 <Link href="#features" className="text-zinc-500 transition-colors hover:text-white">
                   AI-Powered Analytics
@@ -51,8 +51,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-bold text-sm mb-6 uppercase tracking-wider">Company</h3>
-            <ul className="space-y-4 text-sm">
+            <h3 className="text-white font-bold text-[10px] mb-4 uppercase tracking-widest">Company</h3>
+            <ul className="space-y-2.5 text-[13px]">
               <li>
                 <Link href="/about" className="text-zinc-500 transition-colors hover:text-white">
                   About Us
@@ -77,17 +77,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-bold text-sm mb-6 uppercase tracking-wider">Newsletter</h3>
-            <p className="text-zinc-500 text-sm mb-6 leading-relaxed">
+            <h3 className="text-white font-bold text-[10px] mb-4 uppercase tracking-widest">Newsletter</h3>
+            <p className="text-zinc-500 text-xs mb-4 leading-relaxed">
               Subscribe to our engineering updates and industry insights.
             </p>
             <div className="flex gap-2">
               <input 
                 type="email" 
                 placeholder="Email address"
-                className="flex-1 px-4 py-2 rounded-lg bg-zinc-900 border border-zinc-800 text-white text-sm focus:outline-none focus:border-zinc-700 transition-colors"
+                className="flex-1 px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none focus:border-zinc-700 transition-colors"
               />
-              <button className="px-4 py-2 rounded-lg bg-white text-black text-sm font-bold hover:bg-zinc-200 transition-colors">
+              <button className="px-3 py-1.5 rounded-lg bg-white text-black text-xs font-bold hover:bg-zinc-200 transition-colors">
                 Join
               </button>
             </div>
