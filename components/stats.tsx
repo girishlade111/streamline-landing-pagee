@@ -49,9 +49,9 @@ export default function Stats() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6 font-syne uppercase">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 font-sans">
               Proven Excellence in <br />
-              <span className="font-newsreader italic font-light tracking-normal lowercase text-zinc-500">Global Scale</span> Engineering
+              <span className="text-zinc-500">Global Scale Engineering</span>
             </h2>
             <p className="text-zinc-400 text-lg mb-8 max-w-lg">
               We don't just build software; we architect resilient digital ecosystems that empower the world's leading enterprises.
