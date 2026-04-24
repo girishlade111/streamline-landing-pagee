@@ -10,6 +10,7 @@ import FAQ from "@/components/faq"
 import CTA from "@/components/cta"
 import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
+import AnimationWrapper from "@/components/animation-wrapper"
 
 export const metadata: Metadata = {
   title: "Amane Soft - Cutting-Edge Software Solutions for Enterprise",
@@ -42,16 +43,34 @@ export default function Home() {
         </header>
         <main>
           <Hero />
-          <TrustedBy />
-          <Features />
-          <Stats />
-          <Services />
-          <Testimonials />
-          <FAQ />
-          <CTA />
-          <ContactSection />
+          <AnimationWrapper type="fadeInUp" delay={0.1}>
+            <TrustedBy />
+          </AnimationWrapper>
+          <AnimationWrapper type="fadeInUp" delay={0.1}>
+            <Features />
+          </AnimationWrapper>
+          <AnimationWrapper type="fadeInUp" delay={0.1}>
+            <Stats />
+          </AnimationWrapper>
+          <AnimationWrapper type="fadeInUp" delay={0.1}>
+            <Services />
+          </AnimationWrapper>
+          <AnimationWrapper type="fadeInUp" delay={0.1}>
+            <Testimonials />
+          </AnimationWrapper>
+          <AnimationWrapper type="fadeInUp" delay={0.1}>
+            <FAQ />
+          </AnimationWrapper>
+          <AnimationWrapper type="fadeInUp" delay={0.1}>
+            <CTA />
+          </AnimationWrapper>
+          <AnimationWrapper type="fadeInUp" delay={0.1}>
+            <ContactSection />
+          </AnimationWrapper>
         </main>
-        <Footer />
+        <AnimationWrapper type="fadeIn" delay={0}>
+          <Footer />
+        </AnimationWrapper>
       </div>
     </div>
   )

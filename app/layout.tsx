@@ -3,15 +3,16 @@ import { Inter, Geist, Geist_Mono } from "next/font/google"
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import MouseMoveEffect from "@/components/mouse-move-effect"
+import ScrollProgress from "@/components/scroll-progress"
 
-const inter = Inter({ 
-  subsets: ["latin"], 
+const inter = Inter({
+  subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
 })
 
-const geist = Geist({ 
-  subsets: ["latin"], 
+const geist = Geist({
+  subsets: ["latin"],
   display: "swap",
   variable: "--font-geist",
 })
@@ -141,6 +142,7 @@ export default function RootLayout({
         {/* ... existing scripts ... */}
       </head>
       <body className={`${geist.className} bg-background text-foreground antialiased font-sans`}>
+        <ScrollProgress />
         <MouseMoveEffect />
         {children}
       </body>

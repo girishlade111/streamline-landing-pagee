@@ -6,6 +6,33 @@ import { Github, Zap, Menu, X, ChevronDown, Search, Command } from "lucide-react
 import { motion, AnimatePresence } from "framer-motion"
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
+import { navItem, staggerContainer, accessibleTransition } from "@/lib/animations"
+
+const navStagger = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: accessibleTransition({
+      staggerChildren: 0.05,
+      delayChildren: 0.1,
+    }),
+  },
+}
+
+const mobileNavStagger = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: accessibleTransition({
+      staggerChildren: 0.06,
+      delayChildren: 0.15,
+    }),
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.15 },
+  },
+}
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -22,8 +49,8 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { 
-      label: "Solutions", 
+    {
+      label: "Solutions",
       href: "/solutions",
       hasDropdown: true,
       items: [
@@ -33,8 +60,8 @@ export default function Navbar() {
         { label: "Data Infra", href: "/solutions#data-infra" },
       ]
     },
-    { 
-      label: "Resources", 
+    {
+      label: "Resources",
       href: "/resources",
       hasDropdown: true,
       items: [
@@ -50,9 +77,8 @@ export default function Navbar() {
 
   return (
     <div className="fixed top-0 z-50 w-full flex justify-center p-4 sm:p-6 pointer-events-none">
-      <header className={`pointer-events-auto transition-all duration-500 ease-in-out flex items-center gap-6 px-4 py-2 rounded-full border border-white/5 bg-zinc-950/50 backdrop-blur-xl shadow-2xl ${
-        isScrolled ? "scale-95 sm:scale-100" : "w-full max-w-7xl sm:px-6"
-      }`}>
+      <header className={`pointer-events-auto transition-all duration-500 ease-in-out flex items-center gap-6 px-4 py-2 rounded-full border border-white/5 bg-zinc-950/50 backdrop-blur-xl shadow-2xl ${isScrolled ? "scale-95 sm:scale-100" : "w-full max-w-7xl sm:px-6"
+        }`}>
         {/* Logo Section */}
         <Link href="/" className="flex items-center gap-2 group relative z-50 shrink-0">
           <div className="h-7 w-7 rounded-lg bg-white flex items-center justify-center transition-all group-hover:rotate-12">
@@ -62,21 +88,28 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <motion.nav
+          className="hidden lg:flex items-center gap-1"
+          variants={navStagger}
+          initial="hidden"
+          animate="visible"
+        >
           {navItems.map((item) => (
-            <div 
+            <div
               key={item.label}
               className="relative"
               onMouseEnter={() => setActiveDropdown(item.label)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <Link 
-                href={item.href} 
-                className="flex items-center gap-1 px-3 py-1.5 rounded-full text-[12px] font-semibold text-zinc-400 hover:text-white transition-all hover:bg-white/5"
-              >
-                {item.label}
-                {item.hasDropdown && <ChevronDown className={`h-2.5 w-2.5 transition-transform duration-300 ${activeDropdown === item.label ? "rotate-180" : ""}`} />}
-              </Link>
+              <motion.div variants={navItem}>
+                <Link
+                  href={item.href}
+                  className="flex items-center gap-1 px-3 py-1.5 rounded-full text-[12px] font-semibold text-zinc-400 hover:text-white transition-all hover:bg-white/5"
+                >
+                  {item.label}
+                  {item.hasDropdown && <ChevronDown className={`h-2.5 w-2.5 transition-transform duration-300 ${activeDropdown === item.label ? "rotate-180" : ""}`} />}
+                </Link>
+              </motion.div>
 
               <AnimatePresence>
                 {item.hasDropdown && activeDropdown === item.label && (
@@ -101,7 +134,7 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
           ))}
-        </nav>
+        </motion.nav>
 
         {/* Spacer for floating layout */}
         <div className="flex-1" />
@@ -127,7 +160,7 @@ export default function Navbar() {
             Get Started
           </Button>
 
-          <button 
+          <button
             className="lg:hidden p-1.5 text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -148,28 +181,31 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.div
-              initial={{ opacity: 0, y: -20, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.95 }}
-              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              variants={mobileNavStagger}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
               className="fixed top-24 inset-x-4 max-w-sm mx-auto bg-zinc-900 border border-white/10 p-6 rounded-[2rem] z-40 lg:hidden shadow-2xl"
             >
               <div className="flex flex-col gap-5">
-                {navItems.map((item, index) => (
-                  <Link 
-                    key={item.label}
-                    href={item.href} 
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-2xl font-bold text-white hover:text-zinc-500 transition-colors flex items-center justify-between"
-                  >
-                    {item.label}
-                    <ChevronDown className="h-5 w-5 -rotate-90 text-zinc-800" />
-                  </Link>
+                {navItems.map((item) => (
+                  <motion.div key={item.label} variants={navItem}>
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-2xl font-bold text-white hover:text-zinc-500 transition-colors flex items-center justify-between"
+                    >
+                      {item.label}
+                      <ChevronDown className="h-5 w-5 -rotate-90 text-zinc-800" />
+                    </Link>
+                  </motion.div>
                 ))}
-                <div className="h-px bg-white/5 my-2" />
-                <Button size="lg" className="w-full bg-white text-black font-bold rounded-2xl py-6 text-base">
-                  Get Started
-                </Button>
+                <motion.div variants={navItem}>
+                  <div className="h-px bg-white/5 my-2" />
+                  <Button size="lg" className="w-full bg-white text-black font-bold rounded-2xl py-6 text-base">
+                    Get Started
+                  </Button>
+                </motion.div>
               </div>
             </motion.div>
           </>
