@@ -1,28 +1,50 @@
 "use client"
 
-import { Brain, Cloud, Shield, Zap } from "lucide-react"
+import { Brain, Cloud, Shield, Zap, Database, Globe, Lock, Cpu } from "lucide-react"
 import { motion } from "framer-motion"
 
 const features = [
   {
     name: "AI-Powered Analytics",
-    description: "Harness the power of machine learning to derive actionable insights from your data.",
+    description: "Harness the power of machine learning to derive actionable insights from your complex data sets in real-time.",
     icon: Brain,
+    color: "from-purple-500/20 to-indigo-500/20",
+    iconColor: "text-purple-500",
   },
   {
     name: "Cloud-Native Architecture",
-    description: "Scalable, resilient, and efficient solutions built for the modern cloud ecosystem.",
+    description: "Scalable, resilient, and efficient microservices built for the modern multi-cloud ecosystem using Kubernetes.",
     icon: Cloud,
+    color: "from-blue-500/20 to-cyan-500/20",
+    iconColor: "text-blue-500",
   },
   {
-    name: "Enterprise-Grade Security",
-    description: "State-of-the-art security measures to protect your most valuable assets.",
+    name: "Enterprise Security",
+    description: "State-of-the-art security measures including zero-trust architecture and automated threat detection.",
     icon: Shield,
+    color: "from-emerald-500/20 to-teal-500/20",
+    iconColor: "text-emerald-500",
   },
   {
-    name: "High-Performance Systems",
-    description: "Optimized for speed and efficiency, our solutions deliver unparalleled performance.",
+    name: "Real-time Processing",
+    description: "Optimized for extreme low-latency and high-throughput data streams, delivering unparalleled performance.",
     icon: Zap,
+    color: "from-amber-500/20 to-orange-500/20",
+    iconColor: "text-amber-500",
+  },
+  {
+    name: "Data Engineering",
+    description: "Robust ETL pipelines and data lakehouse architectures designed for scale and data integrity.",
+    icon: Database,
+    color: "from-rose-500/20 to-pink-500/20",
+    iconColor: "text-rose-500",
+  },
+  {
+    name: "Edge Computing",
+    description: "Deploy logic closer to your users with our globally distributed edge network for 99.9% availability.",
+    icon: Globe,
+    color: "from-cyan-500/20 to-blue-500/20",
+    iconColor: "text-cyan-500",
   },
 ]
 
@@ -47,7 +69,10 @@ const itemVariants = {
 
 export default function Features() {
   return (
-    <section className="container space-y-16 py-24 md:py-32">
+    <section id="features" className="container space-y-16 py-24 md:py-32 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full -z-10" />
+
       <motion.div 
         className="mx-auto max-w-[58rem] text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -55,13 +80,16 @@ export default function Features() {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">Cutting-Edge Solutions</h2>
-        <p className="mt-4 text-muted-foreground sm:text-lg">
-          Discover how Amane Soft can transform your business with our innovative technologies.
+        <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">
+          Cutting-Edge Solutions
+        </h2>
+        <p className="mt-4 text-muted-foreground sm:text-lg max-w-[42rem] mx-auto">
+          Our technology stack is built for the future. Explore the innovations that drive Amane Soft's digital transformation initiatives.
         </p>
       </motion.div>
+      
       <motion.div 
-        className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2"
+        className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -71,19 +99,24 @@ export default function Features() {
           <motion.div 
             key={feature.name} 
             variants={itemVariants}
-            className="group relative overflow-hidden rounded-xl border bg-background p-8 transition-all hover:shadow-lg hover:shadow-primary/5"
+            className="group relative overflow-hidden rounded-2xl border bg-zinc-950/50 p-8 transition-all hover:border-primary/50 hover:bg-zinc-900/50"
             whileHover={{ y: -5 }}
           >
-            {/* Gradient border hover effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            {/* Gradient background hover effect */}
+            <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 transition-opacity duration-500 group-hover:opacity-100`} />
             
-            <div className="relative z-10 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+            <div className="relative z-10">
+              <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-900 border border-zinc-800 transition-all duration-300 group-hover:scale-110 group-hover:border-primary/50 ${feature.iconColor}`}>
                 <feature.icon className="h-6 w-6" />
               </div>
-              <h3 className="font-bold text-xl">{feature.name}</h3>
+              <h3 className="mt-6 font-bold text-xl text-white">{feature.name}</h3>
+              <p className="mt-3 text-zinc-400 leading-relaxed text-sm">
+                {feature.description}
+              </p>
             </div>
-            <p className="relative z-10 mt-4 text-muted-foreground">{feature.description}</p>
+            
+            {/* Subtle light effect at bottom */}
+            <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
           </motion.div>
         ))}
       </motion.div>
