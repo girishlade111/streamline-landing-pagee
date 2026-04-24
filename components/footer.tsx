@@ -26,7 +26,7 @@ export default function Footer() {
   return (
     <footer className="bg-zinc-950 border-t border-zinc-900 overflow-hidden">
       <div className="container px-4 py-16 md:py-24">
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8"
           variants={footerVariants}
           initial="hidden"
@@ -105,9 +105,9 @@ export default function Footer() {
             <p className="text-zinc-500 text-xs mb-4 leading-relaxed">
               Subscribe to our engineering updates and industry insights.
             </p>
-<div className="flex gap-2">
-              <input 
-                type="email" 
+            <div className="flex gap-2">
+              <input
+                type="email"
                 placeholder="Email address"
                 className="flex-1 px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-white text-xs focus:outline-none focus:border-zinc-700 transition-colors"
               />
@@ -126,7 +126,7 @@ export default function Footer() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <p className="text-zinc-500 text-xs">
-            © {currentYear} Amane Soft, Inc. All rights reserved. Built with precision for the modern enterprise.
+            &copy; {currentYear} Amane Soft, Inc. All rights reserved. Built with precision for the modern enterprise.
           </p>
           <div className="flex gap-8">
             <Link href="/privacy" className="text-zinc-500 text-xs hover:text-white transition-colors">Privacy Policy</Link>
