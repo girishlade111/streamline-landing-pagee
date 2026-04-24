@@ -49,10 +49,10 @@ export default function Services() {
       <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
       <div className="container relative z-10 px-4">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="max-w-2xl">
             <motion.h2 
-              className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 font-sans"
+              className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-5 font-sans"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -62,7 +62,7 @@ export default function Services() {
               <span className="text-zinc-500">at any scale.</span>
             </motion.h2>
             <motion.p 
-              className="text-zinc-400 text-lg leading-relaxed"
+              className="text-zinc-400 text-sm sm:text-base leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -78,35 +78,35 @@ export default function Services() {
             transition={{ duration: 0.5 }}
             className="hidden md:block"
           >
-            <div className="px-6 py-3 rounded-full border border-zinc-800 bg-zinc-900/50 text-white font-medium backdrop-blur-sm">
+            <div className="px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/50 text-white text-xs font-semibold backdrop-blur-sm">
               Our Capabilities
             </div>
           </motion.div>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              className="group flex flex-col justify-between p-8 rounded-3xl bg-zinc-900/30 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900/50 transition-all duration-300"
+              className="group flex flex-col justify-between p-6 rounded-2xl bg-zinc-900/30 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900/50 transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div>
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-zinc-900 border border-zinc-800 text-zinc-400 group-hover:text-white group-hover:border-zinc-500 transition-all duration-300">
-                  <service.icon className="h-7 w-7" />
+                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 group-hover:text-white group-hover:border-zinc-500 transition-all duration-300">
+                  <service.icon className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
-                <p className="text-zinc-400 leading-relaxed mb-6 text-sm">
+                <h3 className="text-lg font-bold text-white mb-3">{service.title}</h3>
+                <p className="text-zinc-400 leading-relaxed mb-5 text-[13px]">
                   {service.description}
                 </p>
               </div>
               
-              <ul className="space-y-3 mt-auto pt-6 border-t border-zinc-800/50">
+              <ul className="space-y-2 mt-auto pt-5 border-t border-zinc-800/50">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2 text-[12px] font-medium text-zinc-500 group-hover:text-zinc-300 transition-colors">
+                  <li key={feature} className="flex items-center gap-2 text-[11px] font-medium text-zinc-500 group-hover:text-zinc-300 transition-colors">
                     <div className="h-1 w-1 rounded-full bg-zinc-700 group-hover:bg-zinc-400" />
                     {feature}
                   </li>
