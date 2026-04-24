@@ -12,9 +12,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-outfit)", "sans-serif"],
-        syne: ["var(--font-syne)", "sans-serif"],
-        newsreader: ["var(--font-newsreader)", "serif"],
+        sans: ["var(--font-geist)", "ui-sans-serif", "system-ui"],
+        mono: ["var(--font-geist-mono)", "ui-monospace", "SFMono-Regular"],
+        inter: ["var(--font-inter)", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

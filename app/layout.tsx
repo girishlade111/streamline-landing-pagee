@@ -1,25 +1,25 @@
 import "./globals.css"
-import { Syne, Newsreader, Outfit } from "next/font/google"
+import { Inter, Geist, Geist_Mono } from "next/font/google"
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import MouseMoveEffect from "@/components/mouse-move-effect"
 
-const syne = Syne({ 
+const inter = Inter({ 
   subsets: ["latin"], 
   display: "swap",
-  variable: "--font-syne",
+  variable: "--font-inter",
 })
 
-const newsreader = Newsreader({ 
+const geist = Geist({ 
   subsets: ["latin"], 
   display: "swap",
-  variable: "--font-newsreader",
+  variable: "--font-geist",
 })
 
-const outfit = Outfit({
+const geistMono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-outfit",
+  variable: "--font-geist-mono",
 })
 
 export const viewport: Viewport = {
@@ -136,11 +136,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`dark ${syne.variable} ${newsreader.variable} ${outfit.variable}`}>
+    <html lang="en" className={`dark ${inter.variable} ${geist.variable} ${geistMono.variable}`}>
       <head>
         {/* ... existing scripts ... */}
       </head>
-      <body className={`${outfit.className} bg-background text-foreground antialiased`}>
+      <body className={`${geist.className} bg-background text-foreground antialiased font-sans`}>
         <MouseMoveEffect />
         {children}
       </body>
