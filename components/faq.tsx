@@ -52,13 +52,13 @@ export default function FAQ() {
             <span>Support Center</span>
           </motion.div>
           <motion.h2 
-            className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6 font-syne uppercase"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 font-sans"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Common <span className="font-newsreader italic font-light tracking-normal lowercase text-zinc-500">Inquiries</span>
+            Common Inquiries
           </motion.h2>
           <motion.p 
             className="text-zinc-400 text-lg max-w-2xl mx-auto"

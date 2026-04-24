@@ -20,14 +20,14 @@ export default function Hero() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center rounded-full border border-purple-500/20 bg-purple-500/10 px-3 py-1 text-sm font-medium text-purple-400"
+            className="inline-flex items-center rounded-full border border-purple-500/20 bg-purple-500/10 px-2.5 py-0.5 text-xs font-medium text-purple-400"
           >
-            <Zap className="mr-2 h-4 w-4" />
+            <Zap className="mr-1.5 h-3.5 w-3.5" />
             <span>New: AI-Powered Analytics 2.0</span>
           </motion.div>
 
           <motion.h1 
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white font-sans"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white font-sans"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -40,7 +40,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p 
-            className="mx-auto max-w-2xl text-lg md:text-xl text-zinc-400 leading-relaxed"
+            className="mx-auto max-w-xl text-base md:text-lg text-zinc-400 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -50,17 +50,17 @@ export default function Hero() {
           </motion.p>
 
           <motion.div 
-            className="flex flex-wrap justify-center gap-4"
+            className="flex flex-wrap justify-center gap-3"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8 h-14 text-lg rounded-full group">
+            <Button size="default" className="bg-purple-600 hover:bg-purple-700 text-white px-6 h-11 text-sm font-semibold rounded-full group">
               Explore Solutions
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
-            <Button variant="outline" size="lg" className="border-zinc-800 hover:bg-zinc-900 text-white px-8 h-14 text-lg rounded-full bg-transparent">
-              <Play className="mr-2 h-4 w-4 fill-current" />
+            <Button variant="outline" size="default" className="border-zinc-800 hover:bg-zinc-900 text-white px-6 h-11 text-sm font-semibold rounded-full bg-transparent">
+              <Play className="mr-2 h-3.5 w-3.5 fill-current" />
               Watch Demo
             </Button>
           </motion.div>
