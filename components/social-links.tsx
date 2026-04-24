@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { Instagram, Linkedin, Github, Codepen, Mail, Globe } from "lucide-react"
+import { motion } from "framer-motion"
 
 const socialProfiles = [
     {

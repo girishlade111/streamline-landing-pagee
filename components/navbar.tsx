@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Github, Zap, Menu, X, ChevronDown } from "lucide-react"
+import { Zap, Menu, X, ChevronDown } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
@@ -141,12 +141,6 @@ export default function Navbar() {
 
         {/* Action Section */}
         <div className="flex items-center gap-2 relative z-50 shrink-0">
-          <Link href="https://github.com/amanesoft" target="_blank" rel="noreferrer" className="hidden sm:block">
-            <div className="p-1.5 rounded-full text-zinc-400 hover:text-white transition-all">
-              <Github className="h-4 w-4" />
-            </div>
-          </Link>
-
           <Button className="hidden sm:flex bg-white hover:bg-zinc-200 text-black font-bold rounded-full px-4 h-8 text-[11px] transition-all">
             Get Started
           </Button>
